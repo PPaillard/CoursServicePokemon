@@ -18,6 +18,12 @@ export class PokemonListComponent implements OnInit {
     this.pokemonService.getPokemons().subscribe(
       (pokedex:Pokedex) => {
         this.pokemons = pokedex.cards
+      },
+      (error) => {
+        console.log("Passage dans le traitement d'erreur : ", error);
+      },
+      ()=> {
+        console.log("Après TOUT !")
       }
     )
   }
